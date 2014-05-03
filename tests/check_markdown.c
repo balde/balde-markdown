@@ -29,12 +29,16 @@ test_markdown_parse(void)
 void
 test_tmpl_markdown(void)
 {
+    // TODO: try to force an error
     balde_app_t *app = balde_app_init();
     gchar *mkd = balde_tmpl_markdown(app, NULL, "### Foo ###\n");
     g_assert_cmpstr(mkd, ==, "<h3>Foo</h3>");
     g_free(mkd);
     balde_app_free(app);
 }
+
+
+// TODO: write some integration tests.
 
 
 int
