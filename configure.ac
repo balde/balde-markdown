@@ -60,6 +60,7 @@ AC_CONFIG_FILES([
     include/Makefile
     src/Makefile
     tests/Makefile
+    balde-markdown.pc
 ])
 AC_OUTPUT
 

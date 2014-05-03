@@ -19,6 +19,9 @@ $(top_srcdir)/.version:
 dist-hook:
 	echo $(VERSION) > $(distdir)/.tarball-version
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = balde-markdown.pc
+
 if USE_VALGRIND
 valgrind: all
 	$(MAKE) -C tests valgrind
