@@ -26,10 +26,22 @@ test_markdown_parse(void)
 }
 
 
+void
+test_tmpl_markdown(void)
+{
+    balde_app_t *app = balde_app_init();
+    gchar *mkd = balde_tmpl_markdown(app, NULL, "### Foo ###\n");
+    g_assert_cmpstr(mkd, ==, "<h3>Foo</h3>");
+    g_free(mkd);
+    balde_app_free(app);
+}
+
+
 int
 main(int argc, char** argv)
 {
     g_test_init(&argc, &argv, NULL);
     g_test_add_func("/markdown/parse", test_markdown_parse);
+    g_test_add_func("/markdown/tmpl_markdown", test_tmpl_markdown);
     return g_test_run();
 }

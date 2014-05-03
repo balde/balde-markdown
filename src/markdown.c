@@ -34,3 +34,19 @@ point0:
     mkd_cleanup(doc);
     return rv;
 }
+
+
+gchar*
+balde_tmpl_markdown(balde_app_t *app, balde_request_t *request, const gchar *mkd)
+{
+    gchar *parsed_mkd = balde_markdown_parse(app, mkd);
+    if (app->error != NULL) {
+        // ops... something went wrong, but we are already building the response
+        // (this function is called by templates), so the GLib error reporting
+        // infrastructure isn't enough!
+        g_free(parsed_mkd);
+        // FIXME: improve this error
+        return g_strdup("<p>Error while parsing markdown!</p>\n");
+    }
+    return parsed_mkd;
+}

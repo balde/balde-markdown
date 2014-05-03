@@ -10,5 +10,7 @@
 #define _BALDE_MARKDOWN_H
 
 gchar* balde_markdown_parse(balde_app_t *app, const gchar *mkd_source);
+gchar* balde_tmpl_markdown(balde_app_t *app, balde_request_t *request,
+    const gchar *mkd);
 
 #endif /* _BALDE_MARKDOWN_H */
