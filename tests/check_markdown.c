@@ -38,6 +38,17 @@ test_tmpl_markdown(void)
 }
 
 
+void
+test_tmpl_markdown_with_null(void)
+{
+    balde_app_t *app = balde_app_init();
+    gchar *mkd = balde_tmpl_markdown(app, NULL, NULL);
+    g_assert_cmpstr(mkd, ==, "");
+    g_free(mkd);
+    balde_app_free(app);
+}
+
+
 // TODO: write some integration tests.
 
 
@@ -47,5 +58,7 @@ main(int argc, char** argv)
     g_test_init(&argc, &argv, NULL);
     g_test_add_func("/markdown/parse", test_markdown_parse);
     g_test_add_func("/markdown/tmpl_markdown", test_tmpl_markdown);
+    g_test_add_func("/markdown/tmpl_markdown_with_null",
+        test_tmpl_markdown_with_null);
     return g_test_run();
 }
