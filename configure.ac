@@ -2,8 +2,8 @@ AC_PREREQ(2.68)
 
 AC_INIT([balde-markdown],
   m4_esyscmd([build-aux/git-version-gen .tarball-version]),
-  [balde-dev@googlegroups.com], [balde-markdown],
-  [http://git.rgm.io/balde/balde-markdown.git])
+  [https://github.com/balde/balde-markdown], [balde-markdown],
+  [https://github.com/balde/balde-markdown])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -53,7 +53,7 @@ AC_SUBST(VALGRIND)
 
 PKG_PROG_PKG_CONFIG
 PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.34])
-PKG_CHECK_MODULES([BALDE], [balde])
+PKG_CHECK_MODULES([BALDE], [balde >= 0.1])
 
 AC_CONFIG_FILES([
     Makefile
