@@ -51,9 +51,11 @@ AM_CONDITIONAL([USE_VALGRIND], [test "x$have_valgrind" = "xyes"])
 VALGRIND="$ac_cv_path_valgrind"
 AC_SUBST(VALGRIND)
 
+BALDE_DEP="glib-2.0 >= 2.34, balde >= 0.1"
+AC_SUBST(BALDE_DEP)
+
 PKG_PROG_PKG_CONFIG
-PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.34])
-PKG_CHECK_MODULES([BALDE], [balde >= 0.1])
+PKG_CHECK_MODULES([BALDE], [$BALDE_DEP])
 
 AC_CONFIG_FILES([
     Makefile

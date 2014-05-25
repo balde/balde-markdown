@@ -10,12 +10,10 @@ check_markdown_SOURCES = \
 AM_CFLAGS = \
 	$(all_includes) \
 	$(BALDE_CFLAGS) \
-	$(GLIB_CFLAGS) \
 	-I$(top_srcdir)/include
 
 AM_LDFLAGS = \
 	$(BALDE_LIBS) \
-	$(GLIB_LIBS) \
 	$(top_builddir)/src/libbalde_markdown.la
 
 if USE_VALGRIND

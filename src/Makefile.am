@@ -5,10 +5,10 @@ libbalde_markdown_la_SOURCES = \
 
 libbalde_markdown_la_CFLAGS = \
 	$(AM_CFLAGS) \
-	$(GLIB_CFLAGS) \
+	$(BALDE_CFLAGS) \
 	-I$(top_srcdir)/include
 
 libbalde_markdown_la_LDFLAGS = \
 	$(AM_LDADD) \
-	$(GLIB_LIBS) \
+	$(BALDE_LIBS) \
 	-version-info $(LT_VERSION_INFO)
