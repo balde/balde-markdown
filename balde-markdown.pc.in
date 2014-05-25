@@ -6,6 +6,6 @@ includedir=@includedir@
 Name: @PACKAGE@
 Description: A balde extension that adds Markdown support.
 Version: @VERSION@
-Requires: balde
+Requires: glib-2.0 >= 2.34, balde >= 0.1
 Libs: -L${libdir} -lbalde_markdown
 Cflags: -I${includedir}
