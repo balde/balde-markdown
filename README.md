@@ -35,7 +35,7 @@ Supposing that you have a template variable called ``content``, with the markdow
 
 The ``balde-markdown.h`` header should be in your include path.
 
-If you want to render the markdown content outside of the templates (e.g. to do some caching), you can use the ``balde_markdown_parse`` function, as defined below:
+If you want to render the markdown content outside of the templates (e.g. to do some caching), you can use the ``balde_markdown_parse()`` function, as defined below:
 
 ```c
 gchar* balde_markdown_parse(balde_app_t *app, const gchar *mkd_source);
