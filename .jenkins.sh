@@ -28,7 +28,7 @@ BALDE_MARKDOWN_BUILD_DIR="${BALDE_MARKDOWN_SRC_DIR}/build"
 
 ## balde needs to know where to look for glib stuff
 export PKG_CONFIG_LIBDIR="${BALDE_BASE_DIR}/lib/pkgconfig"
-export PKG_CONFIG_PATH="${BALDE_BASE_DIR}/lib/pkgconfig:/usr/share/pkgconfig"
+export PKG_CONFIG_PATH="${BALDE_BASE_DIR}/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/$(gcc -dumpmachine)/pkgconfig"
 export PATH="${BALDE_BASE_DIR}/bin:${PATH}"
 
 BALDE_VERSION_PKGCONFIG="$(pkg-config --modversion balde)"
