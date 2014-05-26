@@ -7,7 +7,7 @@
 #
 #     $ sudo apt-get install -y peg libfcgi-dev shared-mime-info pkg-config gettext \
 #         zlib1g-dev libffi-dev autoconf automake1.11 build-essential libtool \
-#         libxml2-utils valgrind clang
+#         libxml2-utils valgrind clang libmarkdown2-dev
 #
 # To install balde, run the .build-balde.sh script (from balde's git repository,
 # see its code for help).
