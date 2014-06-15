@@ -44,6 +44,7 @@ Makefile.in
 /tests/check_markdown
 /tests/*.log
 /tests/*.trs
+/tests/valgrind-*.xml
 
 # pkgconfig
 /balde-markdown.pc

@@ -16,8 +16,11 @@ AM_LDFLAGS = \
 	$(BALDE_LIBS) \
 	$(top_builddir)/src/libbalde_markdown.la
 
+clean-local:
+	-rm -rf valgrind-*.xml
+
 if USE_VALGRIND
-valgrind:
+valgrind: clean
 	$(MAKE) check TESTS_ENVIRONMENT=" \
 		G_SLICE=always-malloc \
 		G_DEBUG=gc-friendly \
@@ -25,6 +28,8 @@ valgrind:
 			--mode=execute \
 			$(VALGRIND) \
 				--tool=memcheck \
+				--xml=yes \
+				--xml-file=valgrind-%p.xml \
 				--leak-check=full \
 				--leak-resolution=high \
 				--num-callers=20 \
