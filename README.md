@@ -47,7 +47,6 @@ The ``gchar*`` returned should be free'd with ``g_free()`` after usage.
 Online tests
 ------------
 
-This extension is tested by a [Jenkins instance](https://ci.rgm.io/view/balde/). You can see the results below:
+This extension is tested by a [Jenkins instance](https://ci.rgm.io/job/balde-markdown/). You can see the results below:
 
-- [![Build Status](https://ci.rgm.io/buildStatus/icon?job=balde-markdown-balde0.1.1-clang)](https://ci.rgm.io/view/balde/job/balde-markdown-balde0.1.1-clang/) - balde-0.1.1 + clang
-- [![Build Status](https://ci.rgm.io/buildStatus/icon?job=balde-markdown-balde0.1.1-gcc)](https://ci.rgm.io/view/balde/job/balde-markdown-balde0.1.1-gcc/) - balde-0.1.1 + GCC
+[![Build Status](https://ci.rgm.io/buildStatus/icon?job=balde-markdown)](https://ci.rgm.io/job/balde-markdown/)
