@@ -11,30 +11,11 @@
 #
 # To install balde, run the .build-balde.sh script (from balde's git repository,
 # see its code for help).
-#
-# Also, it depends on some enviromnent variables, that are setup by Jenkins:
-#
-#     BALDE_VERSION (e.g. 0.1.1)
-#
-
-## balde variables
-BALDE_BASE_DIR="/opt/balde/${BALDE_VERSION}"
 
 
-## balde variables
+## balde-markdown variables
 BALDE_MARKDOWN_SRC_DIR="$(pwd)"
 BALDE_MARKDOWN_BUILD_DIR="${BALDE_MARKDOWN_SRC_DIR}/build"
-
-
-## balde needs to know where to look for glib stuff
-export PKG_CONFIG_LIBDIR="${BALDE_BASE_DIR}/lib/pkgconfig"
-export PKG_CONFIG_PATH="${BALDE_BASE_DIR}/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/$(gcc -dumpmachine)/pkgconfig"
-export PATH="${BALDE_BASE_DIR}/bin:${PATH}"
-
-BALDE_VERSION_PKGCONFIG="$(pkg-config --modversion balde)"
-if [[ "${BALDE_VERSION_PKGCONFIG}" != "${BALDE_VERSION}" ]]; then
-    exit 1
-fi
 
 rm -rf "${BALDE_MARKDOWN_BUILD_DIR}"
 
