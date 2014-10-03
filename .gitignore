@@ -42,11 +42,12 @@ Makefile.in
 
 # tests
 /tests/check_markdown
-/tests/*.log
-/tests/*.trs
-/tests/valgrind-*.xml
+*.log
+*.trs
 
 # pkgconfig
 /balde-markdown.pc
 
 /balde-markdown*.tar.*
+
+/valgrind-*.xml

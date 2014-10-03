@@ -63,9 +63,6 @@ PKG_CHECK_MODULES([BALDE], [$BALDE_DEP])
 
 AC_CONFIG_FILES([
     Makefile
-    include/Makefile
-    src/Makefile
-    tests/Makefile
     balde-markdown.pc
 ])
 AC_OUTPUT
