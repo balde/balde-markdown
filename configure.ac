@@ -12,7 +12,7 @@ AC_CONFIG_MACRO_DIR([m4])
 # interface changed (backwards compatible): AGE++, else AGE=0.
 CURRENT=0
 AGE=0
-REVISION=0
+REVISION=1
 
 LT_VERSION_INFO="$CURRENT:$REVISION:$AGE"
 AC_SUBST(LT_VERSION_INFO)
