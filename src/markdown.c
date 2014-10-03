@@ -17,11 +17,14 @@
 #include <balde-markdown.h>
 
 
+G_LOCK_DEFINE_STATIC(mkd);
+
 gchar*
 balde_markdown_parse(balde_app_t *app, const gchar *mkd_source)
 {
     gchar *rv = NULL;
     gchar *text;
+    G_LOCK(mkd);
     MMIOT *doc = mkd_string(mkd_source, strlen(mkd_source), MKD_TABSTOP);
     if (doc == NULL) {
         balde_abort_set_error(app, 500);
@@ -32,6 +35,7 @@ balde_markdown_parse(balde_app_t *app, const gchar *mkd_source)
     rv = g_strdup(text);
 point0:
     mkd_cleanup(doc);
+    G_UNLOCK(mkd);
     return rv;
 }
 
